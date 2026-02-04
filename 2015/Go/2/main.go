@@ -17,6 +17,7 @@ func main() {
 	scanner := bufio.NewScanner(os.Stdin)
 
 	totalPaper := 0
+	totalRibbon := 0
 
 	for scanner.Scan() {
 		input := scanner.Text()
@@ -38,6 +39,14 @@ func main() {
 
 		totalPaper += area + slack
 
+		volume := list[0] * list[1] * list[2]
+
+		wrap := 2*list[0] + 2*list[1]
+
+		totalRibbon += volume + wrap
+
 	}
 	fmt.Printf("Result: %d\n", totalPaper)
+	fmt.Printf("Total Ribbon: %d\n", totalRibbon)
+
 }
