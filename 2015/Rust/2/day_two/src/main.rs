@@ -7,4 +7,5 @@ fn main() {
     
     let contests = fs::read_to_string(file_path);
     println!("With text:\n{:?}",contests);
+    
 }
