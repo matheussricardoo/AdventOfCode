@@ -6,6 +6,7 @@ fn main() {
     let raw_text = fs::read_to_string(file_path).unwrap();
 
     let mut total_paper = 0;
+    let mut total_ribbon = 0;
     for line in raw_text.lines() {
         let dimensions: Vec<i32> = line.split('x').map(|s| s.parse().unwrap()).collect();
 
@@ -20,6 +21,11 @@ fn main() {
         let slack = list[0] * list[1];
 
         total_paper += area + slack;
+        let volume = list[0] * list[1] * list[2];
+        let wrap = 2 * list[0] + 2 * list[1];
+
+        total_ribbon += volume + wrap
     }
     println!("Result: {total_paper}");
+    println!("Total Ribbon: {total_ribbon}");
 }
