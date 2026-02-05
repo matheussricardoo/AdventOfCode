@@ -15,30 +15,50 @@ func main() {
 	scanner := bufio.NewScanner(os.Stdin)
 	houses := make(map[Point]int)
 
-	var point Point
+	sx, sy := 0, 0
+	rx, ry := 0, 0
 
-	x := point.X
-	y := point.Y
-
-	houses[Point{0, 0}] = 1
+	houses[Point{0, 0}] = 2
 
 	for scanner.Scan() {
 		line := scanner.Text()
-		for _, char := range line {
+		for i, char := range line {
 			switch char {
 			case '^':
-				y++
+				if i%2 == 0 {
+					sy++
+					houses[Point{sx, sy}]++
+				} else if i%2 != 0 {
+					ry++
+					houses[Point{rx, ry}]++
+				}
 			case 'v':
-				y--
+				if i%2 == 0 {
+					sy--
+					houses[Point{sx, sy}]++
+				} else if i%2 != 0 {
+					ry--
+					houses[Point{rx, ry}]++
+				}
 			case '>':
-				x++
+				if i%2 == 0 {
+					sx++
+					houses[Point{sx, sy}]++
+				} else if i%2 != 0 {
+					rx++
+					houses[Point{rx, ry}]++
+				}
 			case '<':
-				x--
+				if i%2 == 0 {
+					sx--
+					houses[Point{sx, sy}]++
+				} else if i%2 != 0 {
+					rx--
+					houses[Point{rx, ry}]++
+				}
 			default:
 				panic("Character not assept.")
 			}
-			present := Point{x, y}
-			houses[present]++
 		}
 		fmt.Printf("How many houses receive at least one present? (%d)\n", len(houses))
 	}
