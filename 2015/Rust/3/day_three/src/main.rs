@@ -13,21 +13,34 @@ fn main() {
 
     let point = Point { x: 0, y: 0 };
 
-    let mut _x = point.x;
-    let mut _y = point.y;
+    let mut _sx = point.x;
+    let mut _sy = point.y;
 
-    houses.insert(Point { x: 0, y: 0 }, 1);
+    let mut _rx = point.x;
+    let mut _ry = point.y;
 
-    for (_i, c) in raw_text.chars().enumerate() {
+    houses.insert(Point { x: 0, y: 0 }, 2);
+
+    for (i, c) in raw_text.chars().enumerate() {
+        let (x_current, y_current) = if i % 2 == 0 {
+            (&mut _sx, &mut _sy)
+        } else {
+            (&mut _rx, &mut _ry)
+        };
         match c {
-            '^' => _y += 1,
-            'v' => _y -= 1,
-            '>' => _x += 1,
-            '<' => _x -= 1,
+            '^' => *y_current += 1,
+            'v' => *y_current -= 1,
+            '>' => *x_current += 1,
+            '<' => *x_current -= 1,
             _ => println!("This character is not acept."),
         }
-        let present = Point { x: _x, y: _y };
-        *houses.entry(present).or_insert(0) += 1;
+        houses.insert(
+            Point {
+                x: *x_current,
+                y: *y_current,
+            },
+            1,
+        );
     }
     println!(
         "How many houses receive at least one present? {}",
