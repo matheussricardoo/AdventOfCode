@@ -15,7 +15,7 @@ func main() {
 		sum_bytes := []byte(sum_input)
 		hashString := md5.Sum(sum_bytes)
 		convertHash := fmt.Sprintf("%x", hashString)
-		if strings.HasPrefix(convertHash, "00000") {
+		if strings.HasPrefix(convertHash, "000000") {
 			fmt.Printf("The number is: %d\n", count)
 			break
 		} else {
