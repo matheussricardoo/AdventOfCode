@@ -9,7 +9,7 @@ fn main() {
 
         let digest = md5::compute(sum_bytes);
         let convert_hash = format!("{:x}", digest);
-        if convert_hash.starts_with("00000") {
+        if convert_hash.starts_with("000000") {
             print!("{}\n", count);
             break;
         } else {
