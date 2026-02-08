@@ -14,7 +14,11 @@
 
 | Year | Day | Go | Rust | Description |
 |:---|:---:|:---:|:---:|:---|
-| 2015 | 1 | ✅ | 🚧 | Not Quite Lisp - Santa's floor navigation |
+| 2015 | 1 | ✅ | ✅ | Not Quite Lisp - Santa's floor navigation |
+| 2015 | 2 | ✅ | ✅ | I Was Told There Would Be No Math - Wrapping paper calculation |
+| 2015 | 3 | ✅ | ✅ | Perfectly Spherical Houses in a Vacuum - Santa's delivery route |
+| 2015 | 4 | ✅ | ✅ | The Ideal Stocking Stuffer - MD5 hash mining |
+| 2015 | 5 | 🚧 | 🚧 | Doesn't He Have Intern-Elves For This? - String validation |
 
 </div>
 
@@ -57,12 +61,55 @@ Each year and day is organized by programming language with its own implementati
 AdventOfCode/
 ├── 2015/
 │   ├── Go/
-│   │   └── 1/
-│   │       ├── main.go
-│   │       └── go.mod
+│   │   ├── 1/
+│   │   │   ├── main.go
+│   │   │   ├── go.mod
+│   │   │   └── input.txt
+│   │   ├── 2/
+│   │   │   ├── main.go
+│   │   │   ├── go.mod
+│   │   │   └── input.txt
+│   │   ├── 3/
+│   │   │   ├── main.go
+│   │   │   ├── go.mod
+│   │   │   └── input.txt
+│   │   ├── 4/
+│   │   │   ├── main.go
+│   │   │   ├── go.mod
+│   │   │   └── input.txt
+│   │   └── 5/
+│   │       └── main.go
 │   └── Rust/
-│       └── 1/
-│           └── day_one/
+│       ├── 1/
+│       │   └── day_one/
+│       │       ├── src/
+│       │       │   ├── main.rs
+│       │       │   └── input.txt
+│       │       ├── Cargo.toml
+│       │       └── Cargo.lock
+│       ├── 2/
+│       │   └── day_two/
+│       │       ├── src/
+│       │       │   ├── main.rs
+│       │       │   └── input.txt
+│       │       ├── Cargo.toml
+│       │       └── Cargo.lock
+│       ├── 3/
+│       │   └── day_three/
+│       │       ├── src/
+│       │       │   ├── main.rs
+│       │       │   └── input.txt
+│       │       ├── Cargo.toml
+│       │       └── Cargo.lock
+│       ├── 4/
+│       │   └── day_four/
+│       │       ├── src/
+│       │       │   ├── main.rs
+│       │       │   └── input.txt
+│       │       ├── Cargo.toml
+│       │       └── Cargo.lock
+│       └── 5/
+│           └── day_five/
 │               ├── src/
 │               │   └── main.rs
 │               ├── Cargo.toml
