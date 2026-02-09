@@ -12,26 +12,20 @@ func main() {
 
 	for scanner.Scan() {
 		input := scanner.Text()
-		vowels := 0
-		hasDouble := false
-		hasForbidden := false
-		var lastChar rune
+		hasSandwich := false
+		letter_repeat := false
 
-		for _, char := range input {
-			if char == 'a' || char == 'e' || char == 'i' || char == 'o' || char == 'u' {
-				vowels++
-
+		for i := 0; i < len(input)-2; i++ {
+			if input[i] == input[i+2] {
+				hasSandwich = true
 			}
-			if char == lastChar {
-				hasDouble = true
+			for j := i + 2; j < len(input)-1; j++ {
+				if input[i] == input[j] && input[i+1] == input[j+1] {
+					letter_repeat = true
+				}
 			}
-			if lastChar == 'a' && char == 'b' || lastChar == 'c' && char == 'd' || lastChar == 'p' && char == 'q' || lastChar == 'x' && char == 'y' {
-				hasForbidden = true
-			}
-
-			lastChar = char
 		}
-		if vowels >= 3 && hasDouble == true && hasForbidden == false {
+		if letter_repeat && hasSandwich {
 			good_string++
 		}
 	}
