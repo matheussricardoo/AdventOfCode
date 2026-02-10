@@ -1,3 +1,0 @@
-module day_three
-
-go 1.25.6
