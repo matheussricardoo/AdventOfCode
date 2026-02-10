@@ -18,7 +18,8 @@
 | 2015 | 2 | ✅ | ✅ | I Was Told There Would Be No Math - Wrapping paper calculation |
 | 2015 | 3 | ✅ | ✅ | Perfectly Spherical Houses in a Vacuum - Santa's delivery route |
 | 2015 | 4 | ✅ | ✅ | The Ideal Stocking Stuffer - MD5 hash mining |
-| 2015 | 5 | 🚧 | 🚧 | Doesn't He Have Intern-Elves For This? - String validation |
+| 2015 | 5 | ✅ | ✅ | Doesn't He Have Intern-Elves For This? - String validation |
+| 2015 | 6 | 🚧 | 🚧 | Probably a Fire Hazard - Light grid instructions |
 
 </div>
 
@@ -34,11 +35,11 @@ git clone https://github.com/matheussricardoo/AdventOfCode.git
 cd AdventOfCode
 
 # For Go solutions
-cd 2015/Go/1/
+cd 2015/Go/1/part1/
 go run main.go
 
 # For Rust solutions
-cd 2015/Rust/1/day_one/
+cd 2015/Rust/1/part1/
 cargo run
 ```
 
@@ -55,65 +56,69 @@ This project uses the following programming languages to explore different appro
 
 ### Project Structure
 
-Each year and day is organized by programming language with its own implementation.
+Each year and day is organized by programming language with its own implementation, divided into part1 and part2.
 
 ```
 AdventOfCode/
 ├── 2015/
 │   ├── Go/
 │   │   ├── 1/
-│   │   │   ├── main.go
-│   │   │   ├── go.mod
-│   │   │   └── input.txt
+│   │   │   ├── part1/
+│   │   │   │   ├── main.go
+│   │   │   │   └── go.mod
+│   │   │   └── part2/
+│   │   │       ├── main.go
+│   │   │       └── go.mod
 │   │   ├── 2/
-│   │   │   ├── main.go
-│   │   │   ├── go.mod
-│   │   │   └── input.txt
+│   │   │   ├── part1/
+│   │   │   │   ├── main.go
+│   │   │   │   └── go.mod
+│   │   │   └── part2/
+│   │   │       ├── main.go
+│   │   │       └── go.mod
 │   │   ├── 3/
-│   │   │   ├── main.go
-│   │   │   ├── go.mod
-│   │   │   └── input.txt
-│   │   ├── 4/
-│   │   │   ├── main.go
-│   │   │   ├── go.mod
-│   │   │   └── input.txt
-│   │   └── 5/
-│   │       └── main.go
+│   │   │   ├── part1/
+│   │   │   │   ├── main.go
+│   │   │   │   └── go.mod
+│   │   │   └── part2/
+│   │   │       ├── main.go
+│   │   │       └── go.mod
+│   │   └── ...
 │   └── Rust/
 │       ├── 1/
-│       │   └── day_one/
+│       │   ├── part1/
+│       │   │   ├── src/
+│       │   │   │   └── main.rs
+│       │   │   ├── Cargo.toml
+│       │   │   └── Cargo.lock
+│       │   └── part2/
 │       │       ├── src/
-│       │       │   ├── main.rs
-│       │       │   └── input.txt
+│       │       │   └── main.rs
 │       │       ├── Cargo.toml
 │       │       └── Cargo.lock
 │       ├── 2/
-│       │   └── day_two/
+│       │   ├── part1/
+│       │   │   ├── src/
+│       │   │   │   └── main.rs
+│       │   │   ├── Cargo.toml
+│       │   │   └── Cargo.lock
+│       │   └── part2/
 │       │       ├── src/
-│       │       │   ├── main.rs
-│       │       │   └── input.txt
+│       │       │   └── main.rs
 │       │       ├── Cargo.toml
 │       │       └── Cargo.lock
 │       ├── 3/
-│       │   └── day_three/
+│       │   ├── part1/
+│       │   │   ├── src/
+│       │   │   │   └── main.rs
+│       │   │   ├── Cargo.toml
+│       │   │   └── Cargo.lock
+│       │   └── part2/
 │       │       ├── src/
-│       │       │   ├── main.rs
-│       │       │   └── input.txt
+│       │       │   └── main.rs
 │       │       ├── Cargo.toml
 │       │       └── Cargo.lock
-│       ├── 4/
-│       │   └── day_four/
-│       │       ├── src/
-│       │       │   ├── main.rs
-│       │       │   └── input.txt
-│       │       ├── Cargo.toml
-│       │       └── Cargo.lock
-│       └── 5/
-│           └── day_five/
-│               ├── src/
-│               │   └── main.rs
-│               ├── Cargo.toml
-│               └── Cargo.lock
+│       └── ...
 ├── LICENSE
 └── README.md
 ```
