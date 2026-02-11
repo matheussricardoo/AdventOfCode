@@ -45,5 +45,5 @@ fn main() {
             }
         }
     }
-    println!("{}", total_lights)
+    println!("Total lights: {}", total_lights)
 }
