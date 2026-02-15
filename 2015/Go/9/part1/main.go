@@ -3,12 +3,14 @@ package main
 import (
 	"bufio"
 	"fmt"
+	"math"
 	"os"
 	"strconv"
 	"strings"
 )
 
 var maxDist = 0
+var minDist = math.MaxInt64
 var distances = map[string]map[string]int{}
 
 func main() {
@@ -39,13 +41,13 @@ func main() {
 
 		citiesVisited(startCity, visited, 0, totalCities)
 	}
-	fmt.Println(maxDist)
+	fmt.Println(minDist)
 }
 
 func citiesVisited(city string, visited map[string]bool, totalDistance int, totalCities int) {
 	if len(visited) == totalCities {
-		if totalDistance > maxDist {
-			maxDist = totalDistance
+		if totalDistance < minDist {
+			minDist = totalDistance
 		}
 		return
 	}
